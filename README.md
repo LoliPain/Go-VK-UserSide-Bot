@@ -6,17 +6,15 @@
 ## Функционал
 В отличии от [Python бота](https://github.com/P2LOVE/VK-UserSide-Bot "Python бота") реализован только функционал для удаления сообщений используя триггер и их редактирование если после триггера указан `-`
 
-![](http://worstin.me/img/x2uvp.gif)
+![](https://lolipa.in/static/img/opera_qJohlQoHf4.gif)
 
 ## Установка и использование
 Главная зависимость - библиотека `vksdk`
 
 ##### Для установки VKSDK со стандартным GoPath и GoRoot используйте
 ```bash
-go get github.com/SevereCloud/vksdk
+go get github.com/SevereCloud/vksdk/v2@latest
 ```
-
-Вероятно также потребуется установить её зависимости (но об этом вы узнаете только после попытки запустить скрипт)
 
 ##### Клонируйте репозиторий 
 ```bash
@@ -28,11 +26,13 @@ cd Go-VK-UserSide-Bot
 
 ###### И в этом же файле заполните значение `DeleteTrigger` на строке №17, записав туда триггер которым вы хотите инициировать удаления сообщений.
 
-![Пример настроенного скрипта](http://worstin.me/img/9j2yh.png "Пример настроенного скрипта")
+![Пример настроенного скрипта](http://lolipa.in/static/img/mintty_CAMsyEovLS.png "Пример настроенного скрипта")
 
 ##### И для запуска используйте
 ```bash
-go build del-msg-vk.go
+go mod init vk-bot
+go mod tidy
+
 go run del-msg-vk.go
 ```
 

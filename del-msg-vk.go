@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/SevereCloud/vksdk/api"
-	"github.com/SevereCloud/vksdk/longpoll-user"
-	wrapper "github.com/SevereCloud/vksdk/longpoll-user/v3"
+	"github.com/SevereCloud/vksdk/v2/api"
+	"github.com/SevereCloud/vksdk/v2/longpoll-user"
+	wrapper "github.com/SevereCloud/vksdk/v2/longpoll-user/v3"
 	"log"
 	"strconv"
 	"strings"
@@ -23,7 +23,7 @@ var UserList, _ = VK.UsersGet(api.Params{})
 var MyID = UserList[0].ID
 
 func main() {
-	GetLongpoll, _ := longpoll.NewLongpoll(VK, 0)
+	GetLongpoll, _ := longpoll.NewLongPoll(VK, 0)
 	EventWrapper := wrapper.NewWrapper(GetLongpoll)
 	EventWrapper.OnNewMessage(func(message wrapper.NewMessage) {
 		MessageText := strings.ToLower(message.ExtraFields.Text)
